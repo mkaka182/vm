@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: beaming-ring-289904
+  template:
+    metadata:
+      labels:
+        app: beaming-ring-289904
+    spec:
+      containers:
+      - name: beaming-ring-289904
+        image:      ports:
+        - containerPort: 8080
+        env:
+          - name : PORT
+            value : "8080"
